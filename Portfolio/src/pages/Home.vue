@@ -181,11 +181,12 @@ const certificates = [
     <!-- Navbar -->
     <nav :class="['fixed w-full z-50 transition-all duration-300', isScrolled || isMobileMenuOpen ? 'bg-secondary/90 backdrop-blur-md shadow-lg shadow-black/20 py-4' : 'bg-transparent py-6']">
       <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
-        <a href="#" class="text-2xl font-bold text-white tracking-tight">MA<span class="text-primary">.</span></a>
+        <a href="#" class="text-2xl font-bold text-white tracking-tight uppercase">MA<span class="text-primary">.</span></a>
         
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
           <button @click="scrollTo('about')" class="hover:text-primary transition-colors">About</button>
+          <button @click="scrollTo('education')" class="hover:text-primary transition-colors">Education</button>
           <button @click="scrollTo('skills')" class="hover:text-primary transition-colors">Skills</button>
           <button @click="scrollTo('projects')" class="hover:text-primary transition-colors">Projects</button>
           <button @click="scrollTo('experience')" class="hover:text-primary transition-colors">Experience</button>
@@ -207,6 +208,7 @@ const certificates = [
       <!-- Mobile Menu Dropdown -->
       <div v-if="isMobileMenuOpen" class="md:hidden absolute top-full left-0 w-full bg-gray-900 border-t border-gray-800 shadow-xl py-4 flex flex-col items-center gap-6">
         <button @click="scrollToAndClose('about')" class="text-gray-300 hover:text-primary transition-colors font-medium">About</button>
+        <button @click="scrollToAndClose('education')" class="text-gray-300 hover:text-primary transition-colors font-medium">Education</button>
         <button @click="scrollToAndClose('skills')" class="text-gray-300 hover:text-primary transition-colors font-medium">Skills</button>
         <button @click="scrollToAndClose('projects')" class="text-gray-300 hover:text-primary transition-colors font-medium">Projects</button>
         <button @click="scrollToAndClose('experience')" class="text-gray-300 hover:text-primary transition-colors font-medium">Experience</button>
@@ -232,13 +234,13 @@ const certificates = [
             </span>
             Available for new opportunities
           </div>
-          <h1 class="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6">
-            Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Muhammad Adeel</span>
+          <h1 class="text-4xl lg:text-6xl font-light tracking-tight text-white/90 mb-4">
+            Hi, I'm <span class="block mt-4 text-6xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500 font-orbitron tracking-normal uppercase">Muhammad Adeel</span>
           </h1>
-          <h2 class="text-2xl lg:text-3xl font-medium text-gray-400 mb-6">
-            Full Stack Developer <br class="hidden lg:block"/><span class="text-lg lg:text-2xl opacity-80 mt-2 block">(Laravel & Vue Specialist)</span>
+          <h2 class="text-2xl lg:text-3xl font-medium text-gray-400 mb-8 tracking-wide">
+            Full Stack Developer <span class="text-lg lg:text-2xl opacity-60 ml-2">(Laravel & Vue Specialist)</span>
           </h2>
-          <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+          <p class="text-lg md:text-xl text-slate-300 mb-12 max-w-2xl mx-auto lg:mx-0 leading-[1.8]">
             I build responsive and high-performance web applications with clean and efficient code. I create user-friendly interfaces and develop reliable backend systems, ensuring everything works smoothly together.
           </p>
           <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
@@ -288,10 +290,10 @@ const certificates = [
         <div class="flex flex-col lg:flex-row gap-16 items-center">
           <div class="flex-1 space-y-6">
             <h2 class="section-title">About Me</h2>
-            <p class="text-lg leading-relaxed text-gray-400">
+            <p class="text-lg leading-relaxed text-slate-300">
               My journey in software development is driven by a passion for creating meaningful, scalable solutions. With expertise rooted in <strong class="text-emerald-400 font-medium">Laravel</strong> and <strong class="text-emerald-400 font-medium">Vue.js</strong>, I build comprehensive web applications from the database architecture to the interactive user interface.
             </p>
-            <p class="text-lg leading-relaxed text-gray-400">
+            <p class="text-lg leading-relaxed text-slate-300">
               Currently, I am working as a <strong class="text-white">Technical Associate at Skill Sprint</strong>, where I assist in technical tasks, actively engage in development workflows, and solve real-world problems alongside a talented team. My career goal is to continuously evolve, master modern full-stack architectures, and deliver products that provide exceptional value.
             </p>
           </div>
@@ -309,12 +311,58 @@ const certificates = [
       </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education" class="py-24 relative z-10">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row gap-16">
+        
+        <!-- Left: Header -->
+        <div class="lg:w-1/3">
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4 uppercase">Education</h2>
+          <div class="h-1.5 w-24 bg-emerald-500 mb-8"></div>
+          <p class="text-slate-300 leading-relaxed text-lg max-w-sm">
+            Acquiring a solid foundation in Computer Science, focusing on modern technologies and software engineering principles at Superior University.
+          </p>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="lg:w-2/3 space-y-12">
+          <div class="group">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+              <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors uppercase tracking-wide">
+                Bachelor of Computer Science
+              </h3>
+              <div class="flex items-center gap-3">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/20">
+                  Currently Studying
+                </span>
+              </div>
+            </div>
+            
+            <p class="text-xl text-gray-400 font-medium mb-6">
+              Superior University <span class="text-gray-700 mx-2">|</span> 2022 – 2027
+            </p>
+
+            <div class="bg-gray-800/30 border border-gray-700/50 p-6 rounded-2xl">
+              <h4 class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-4">Focus Areas</h4>
+              <div class="flex flex-wrap gap-3">
+                <span v-for="course in ['Data Structures', 'Database Systems', 'Web Development','AI Integration']" :key="course" 
+                  class="px-4 py-2 rounded-xl bg-secondary text-gray-300 text-sm border border-gray-800 hover:border-emerald-500/30 transition-all duration-300">
+                  {{ course }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="py-24 relative z-10">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="section-title">Technical Expertise</h2>
-          <p class="text-gray-400 max-w-2xl mx-auto">A comprehensive toolkit spanning the entire stack, allowing me to build robust, scalable, and responsive applications.</p>
+          <p class="text-slate-300 max-w-2xl mx-auto">A comprehensive toolkit spanning the entire stack, allowing me to build robust, scalable, and responsive applications.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

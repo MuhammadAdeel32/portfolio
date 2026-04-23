@@ -6,6 +6,9 @@
   body {
     @apply bg-secondary text-gray-100 font-sans antialiased;
   }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
+  }
 }
 
 @layer components {
@@ -18,7 +21,7 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 mb-8 inline-block;
+    @apply text-3xl md:text-4xl font-bold font-sans bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-8 inline-block uppercase tracking-wide;
   }
 
   .card {
