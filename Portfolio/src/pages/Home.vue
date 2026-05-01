@@ -24,7 +24,7 @@ const sendMessage = async () => {
 
     console.log("Sending message...");
 
-    const res = await axios.post("http://localhost:5000/api/messages", {
+    const res = await axios.post("/api/messages", {
       name: name.value,
       email: email.value,
       message: message.value,
@@ -241,7 +241,7 @@ const certificates = [
             Full Stack Developer <span class="text-lg lg:text-2xl opacity-60 ml-2">(Laravel & Vue Specialist)</span>
           </h2>
           <p class="text-lg md:text-xl text-slate-300 mb-12 max-w-2xl mx-auto lg:mx-0 leading-[1.8]">
-            I build responsive and high-performance web applications with clean and efficient code. I create user-friendly interfaces and develop reliable backend systems, ensuring everything works smoothly together.
+             build responsive and high-performance web applications with clean and efficient code. Develop create user-friendly interfaces and develop reliable backend systems, ensuring everything works smoothly together.
           </p>
           <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
             <button @click="scrollTo('projects')" class="btn-primary w-full sm:w-auto">
