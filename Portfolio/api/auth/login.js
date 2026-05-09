@@ -14,6 +14,13 @@ export default async function handler(req, res) {
     if (req.method === "POST") {
         const { username, password } = req.body;
 
+        console.log("Login attempt for:", username);
+        
+        if (!process.env.ADMIN_USERNAME || !process.env.ADMIN_PASSWORD) {
+            console.error("ADMIN_USERNAME or ADMIN_PASSWORD not set in environment variables");
+            return res.status(500).json({ success: false, message: "Server configuration error" });
+        }
+
         if (
             username === process.env.ADMIN_USERNAME &&
             password === process.env.ADMIN_PASSWORD

@@ -9,6 +9,10 @@ if (!cached) {
 }
 
 export default async function connectDB() {
+    if (!MONGO_URI) {
+        throw new Error("Please define the MONGO_URI environment variable inside .env.local or Vercel dashboard");
+    }
+
     if (cached.conn) return cached.conn;
 
     if (!cached.promise) {

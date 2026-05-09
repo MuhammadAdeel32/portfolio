@@ -1,7 +1,12 @@
-<template>
-  <router-view></router-view>
-</template>
+<script setup>
+import { ref } from 'vue'
+import AppLoader from './components/AppLoader.vue'
 
-<style scoped>
-/* Global scoped styles can go here if needed */
-</style>
+const loading = ref(true)
+const onLoaderDone = () => { loading.value = false }
+</script>
+
+<template>
+  <AppLoader v-if="loading" @done="onLoaderDone" />
+  <router-view v-if="!loading" />
+</template>
